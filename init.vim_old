@@ -1,0 +1,8 @@
+set clipboard=unnamedplus
+set number
+set relativenumber
+let g:OmniSharp_server_use_mono = 1
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'OmniSharp/omnisharp-vim'
+call plug#end()
