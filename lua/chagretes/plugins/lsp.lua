@@ -14,6 +14,11 @@ return {
         "j-hui/fidget.nvim",
     },
 
+    -- Only load this plugin when not in VSCode
+    cond = function()
+        return vim.g.vscode ~= 1
+    end,
+
     config = function()
         require("conform").setup({
             formatters_by_ft = {
@@ -34,6 +39,8 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
+                "ts_ls",
+                "eslint",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
