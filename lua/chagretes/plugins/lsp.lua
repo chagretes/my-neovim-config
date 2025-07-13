@@ -75,6 +75,23 @@ return {
             }
         })
 
+        -- Configuração do servidor DotRush (não gerenciado pelo Mason)
+        require('lspconfig.configs').dotrush = {
+            default_config = {
+                cmd = { '/home/chagretes/codes/DotRush.Bundle.Server/DotRush' }, -- Ajuste o caminho para o executável DotRush
+                filetypes = { 'cs', 'xaml' },
+                root_dir = function(fname)
+                    return vim.fn.getcwd()
+                end,
+                capabilities = capabilities,
+            };
+        }
+
+        -- Configurar o servidor DotRush
+        require('lspconfig').dotrush.setup({
+            capabilities = capabilities,
+        })
+
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
