@@ -76,5 +76,6 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
-vim.keymap.set("n", "<leader>d", ":Telescope lsp_references")
-vim.keymap.set("n", "<leader>", ":Telescope live_grep")
+vim.keymap.set("n", "<leader>d", ":Telescope lsp_references<CR>")
+vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<leader>k", ":lua vim.diagnostic.open_float()<CR>")
